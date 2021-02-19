@@ -1,0 +1,41 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "npx webpack -p --env production",
+    "start": "npx webpack-dev-server",
+    "lint": "npx eslint ."
+  },
+  "dependencies": {
+    "@shopify/polaris": "^6.0.1",
+    "axios": "0.21.1",
+    "lodash": "^4.17.20",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.4",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.13",
+    "@babel/plugin-proposal-class-properties": "7.12.13",
+    "@babel/plugin-proposal-export-default-from": "7.12.13",
+    "@babel/preset-env": "7.12.13",
+    "@babel/preset-react": "7.12.13",
+    "babel-loader": "8.2.2",
+    "babel-plugin-syntax-dynamic-import": "6.18.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2017": "6.24.1",
+    "css-loader": "5.0.2",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-react": "^7.11.1",
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7",
+    "style-loader": "2.0.0",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.4.1"
+  }
+}
