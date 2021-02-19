@@ -38,23 +38,25 @@ const initApp = async () => {
     timeout: 20000,
   });
 
-  const favorites = JSON.parse(localStorage.getItem("favorites"));
+  const storedFavorites = localStorage.getItem("favorites");
 
-  const favoritesPromises = favorites.map(({ name }) =>
-    axios.get(getWeatherByCityUrl(name))
-  );
+  if (storedFavorites) {
+    const favorites = JSON.parse(storedFavorites);
+    const favoritesPromises = favorites.map(({ name }) =>
+      axios.get(getWeatherByCityUrl(name))
+    );
 
-  const data = await Promise.all(favoritesPromises);
+    const weatherData = await Promise.all(favoritesPromises);
 
-  const newFavorites = data.map(({ data }) => {
-    const {
-      name,
-      main: { temp },
-    } = data;
-    return { name, temp: Math.floor(temp) };
-  });
-
-  store.dispatch(actions.setFavorites({ favorites: newFavorites }));
+    const newFavorites = weatherData.map(({ data }) => {
+      const {
+        name,
+        main: { temp },
+      } = data;
+      return { name, temp: Math.floor(temp) };
+    });
+    store.dispatch(actions.setFavorites({ favorites: newFavorites }));
+  }
 
   render(
     <Provider store={store}>
