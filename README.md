@@ -9,3 +9,5 @@ Weather App:
 1. API любого сервиса(например OWM API)
 2. Компоненты https://polaris.shopify.com/components/get-started 
 3. Стек react/redux, сохраненные города можно хранить в localStorage
+
+[Demo](https://quasko.github.io/kad-test-demo/)
